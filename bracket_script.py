@@ -19,7 +19,7 @@ for filename in glob.iglob(root_dir + '**/*.txt', recursive=True):
     closing_bracket_count = 0
 
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='ascii') as file:
             for line in file:
                 cleaned_line = remove_comments(line, '#')
                 opening_bracket_count += cleaned_line.count('{')
